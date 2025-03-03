@@ -2,7 +2,7 @@ import random
 
 main_guest = []
 main_invites = []
-amount_of_guests = 6
+amount_of_guests = 7
 new_guest = []
 
 while amount_of_guests > 0:
@@ -38,14 +38,17 @@ print(f"cant forget {main_guest [5]}")
 invites = input(f"dear {main_guest [5]} ")
 main_invites.append(invites)
 print(f"and {main_guest [6]} was saved best for last")
+invites = input(f"dear {main_guest [6]} ")
 main_invites.append(invites)
 
 random_index = random.randint(0, len(main_guest) - 1)
 random_person = main_guest[random_index]
 print(f"oh no {random_person} was unable to come")
 print("we need to invite someone new")
-new_guest = input("lets replace {random_person} with ")
+new_guest = input(f"lets replace {random_person} with ")
 
 random_person = new_guest
+main_guest.remove(f"{random_person}")
+main_guest.append(f"{new_guest}")
 
-print(main_guest)
+print(f"{main_guest}")
