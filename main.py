@@ -1,14 +1,26 @@
+#goal: make a way to invite some people to a party and make sure you are able to replace people.
 import random
 
 main_guest = []
 main_invites = []
-amount_of_guests = 8
 new_guest = []
-
+#ask how many people you want to invite
+while True:
+    amount_of_guests = input("how many people would you like to invite to the party? ")
+    if amount_of_guests.isdigit():
+        choice = input(f"you want {amount_of_guests} people to come to the party? [y/n] ")
+        if choice == "y":
+            print("ok")
+            break
+        if choice == "n":
+            print("ok then")
+            pass
+    else:
+        print("The input is not a valid number, you must input a number and not a letter.")
+        valid_int = False
+#ask who you want to invite
 while amount_of_guests > 0:
-    if amount_of_guests > 6:
-        amount_of_guests -= 1
-    
+        
     guest = input("Who would you like to invite? ")
     choice = input(f"Do you want {guest} to be at your party? [y/n] ")
 
@@ -27,7 +39,7 @@ while amount_of_guests > 0:
     else:
         print("That is not an option. Try again.")
 
-        
+#make a letter for everyone you invited
 print("ok lets make an invitation letter for everyone :)")
 print(f"lets make a letter for {main_guest[0]} first")
 invites = input(f"dear {main_guest [0]} ")
@@ -48,7 +60,7 @@ print(f"and finaliy {main_guest [5]}")
 invites = input(f"dear {main_guest [5]} ")
 main_invites.append(invites)
 
-
+#make it so that you can replace someone you invited
 random_index = random.randint(0, len(main_guest) - 1)
 random_person = main_guest[random_index]
 print(f"oh no {random_person} was unable to come")
