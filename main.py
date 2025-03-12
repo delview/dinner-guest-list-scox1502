@@ -69,4 +69,5 @@ while choice == "y":
     
     choice = input("Would you like to replace anyone else? [y/n] ")
 #show who has been invited
-print(f"{main_guest}")
+for main_guest in main_guest:
+    print(f" you have invited:{main_guest}")
